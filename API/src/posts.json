@@ -1,0 +1,60 @@
+[
+    {
+        "author": "pallominha",
+        "email": "pallominha@example.com",
+        "id": 1,
+        "picture": "1723675351196-baixados.jfif",
+        "description": "aaaaaaaa"
+    },
+    {
+        "author": "Julio Reis",
+        "email": "julioreis@example.com",
+        "id": 2,
+        "typeAnimal": "cachorro",
+        "picture": "1723677511765-cachorro.jpg",
+        "description": "cachorro legal"
+    },
+    {
+        "author": "Nathalia",
+        "email": "nathalia@example.com",
+        "id": 3,
+        "typeAnimal": "chinchila",
+        "picture": "1723679443761-baixados (2).jfif",
+        "description": "chinchila"
+    },
+    {
+        "author": "Diogo",
+        "email": "diogo@example.com",
+        "id": 4,
+        "typeAnimal": "papagaio",
+        "picture": "1723905092479-baixados.jpg",
+        "description": "Um casal muito fofo de papagaios vindos direto da Amazônia."
+    },
+    {
+        "author": "Jackson",
+        "email": "jackson@example.com",
+        "accountID": "secret",
+        "id": 5,
+        "typeAnimal": "papagaio",
+        "picture": "1723905987943-baixados.jpg",
+        "description": "bla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla bla"
+    },
+    {
+        "author": "não sei",
+        "email": "naosei@example.com",
+        "accountID": "as74s7adf7as6",
+        "typeAnimal": "papagaio",
+        "picture": "1723931008626-WhatsApp Image 2024-08-17 at 12.39.51.jpeg",
+        "description": "aosibhdaosj",
+        "link": "http://localhost:8000/publications/dd1fbd98a8d9bb8867236ac8a5ba6946",
+        "HASH": "dd1fbd98a8d9bb8867236ac8a5ba6946"
+    },
+    {
+        "accountID": "8f37348b-0d64-499f-85ca-a64f7654b8ef",
+        "typeAnimal": "pássaro",
+        "picture": "1723999765642-WhatsApp Image 2024-08-17 at 12.39.51.jpeg",
+        "description": "van gogh?",
+        "link": "http://localhost:8000/publications/undefined",
+        "HASH": "428a70325e3c624b58345464cfa5005e"
+    }
+]

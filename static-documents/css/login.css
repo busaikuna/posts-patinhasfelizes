@@ -1,0 +1,44 @@
+body, form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+body {
+    justify-content: center;
+    height: 80vh;
+}
+
+form {
+    gap: 1rem;
+}
+
+img {
+    width: 150px;
+}
+
+input {
+    width: 100%;
+    padding: 0.5rem;
+    color: var(--main);
+}
+
+h1 {
+    color: var(--main);
+}
+
+button {
+    width: 70%;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 3px;
+    color: var(--light);
+    background-color: var(--main);
+    font-weight: bold;
+}
+
+a {
+    font-weight: bold;
+    color: var(--main);
+    text-decoration: none;
+}

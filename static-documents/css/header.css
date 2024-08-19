@@ -1,0 +1,39 @@
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background-color: var(--light);
+    color: var(--main);
+}
+
+header .info {
+    justify-content: space-between;
+}
+
+.info .person {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+   
+}
+
+.info a {
+    text-decoration: none;
+    color: var(--main);
+    font-size: 0.8rem;
+}
+
+.logout {
+    font-size: 1.3rem !important;
+    margin-right: 1rem;
+}
+
+.info img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+body {
+    padding-top: 50px;
+}

@@ -109,6 +109,10 @@ form{
     display: flex;
     flex-direction: column;
     gap: 25px;
+    box-shadow: 0 10px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 7px;
+    font-weight: bold;
 }
 form div{
     display: flex;
@@ -121,13 +125,62 @@ textarea{
     height: 100%;
     outline: none;
     border-radius: 10px;
+    resize: none;
 }
-form input{
-    background-color: var(--main);
-    border: none;
-    outline: none;
-    height: 5vh;
+form input[type="file"] {
+    background-color: #1070ca; 
+    color: #fff; 
+    border: none; 
+    border-radius: 5px; 
+    height: 40px;
     cursor: pointer;
+    outline: none; 
+    display: inline-block; 
+    text-align: center; 
+    line-height: 40px; 
+    width: 100%; 
+    font-size: 0.9rem;
+    position: relative; 
+}
+
+
+form input[type="file"]::-webkit-file-upload-button {
+    display: none;
+}
+
+
+form input[type="file"]::before {
+    content: 'Clique aqui e adicione uma imagem';
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-color: #1070ca;
+    color: #fff; 
+    border-radius: 5px; 
+    font-size: 0.9rem;
+    line-height: 40px; 
+    cursor: pointer;
+    text-align: center; 
+}
+form input[type="submit"] {
+    background-color: #1070ca;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form input[type="submit"]:hover {
+    background-color: #0d5a9b;
+}
+dialog{
+    position: relative;
+    border: none;
+    padding: 0;
+    margin-bottom: 80px;
 }
 .modal-newPost span{
     cursor: pointer;
@@ -197,4 +250,8 @@ form input{
 }
 .readMore-description{
     display: none;
+}
+.close{
+   margin-left: 240px;
+   font-weight: bold;
 }

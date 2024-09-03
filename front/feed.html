@@ -11,45 +11,6 @@
     <link rel="stylesheet" href="header.css" />
   </head>
   <body>
-    <div class="modal-newPost">
-      <span>X</span>
-      <h1>Adicionar POST</h1>
-      <form action="http://localhost:8000/newPost" method="POST" enctype="multipart/form-data">
-        <div class="image-upload">
-            <label for="image"></label>
-            <input hidden type="file" name="image" id="image">
-        </div>
-        <div>
-          <select name="typeAnimal" id="type-animal">
-            <option value="cachorro">Cachorro</option>
-            <option value="gato">Gato</option>
-            <option value="papagaio">Papagaio</option>
-            <option value="coelho">Coelho</option>
-            <option value="hamster">Hamster</option>
-            <option value="peixe">Peixe</option>
-            <option value="cavalo">Cavalo</option>
-            <option value="iguana">Iguana</option>
-            <option value="tartaruga">Tartaruga</option>
-            <option value="rato">Rato</option>
-            <option value="pato">Pato</option>
-            <option value="porquinho-da-índia">Porquinho-da-índia</option>
-            <option value="furão">Furão</option>
-            <option value="pássaro">Pássaro</option>
-            <option value="tartaruga-de-terra">Tartaruga de terra</option>
-            <option value="peixe-beta">Peixe beta</option>
-            <option value="chinchila">Chinchila</option>
-          </select>
-          
-        </div>
-        <div class="description">
-          <label for="description">Adicione uma descrição:</label>
-          <textarea name="description" id="description"></textarea>
-        </div>
-        <div>
-          <input type="submit" value="Enviar">
-        </div>
-      </form>
-    </div>
     <header>
       <div class="info">
         <img src="logo.jpeg" alt="" />
@@ -75,11 +36,10 @@
       <a href="profile.html"><img src="profile-icon.jpeg" alt="Profile" /></a>
     </footer>
 
-    <dialog close>
-      <p>Greetings, one and all!</p>
+    <dialog>
+      <span class="close">X</span>
       <form id="myForm" enctype="multipart/form-data">
         <div class="image-upload">
-          <label for="image">Escolha uma imagem:</label>
           <input type="file" name="image" id="image" />
         </div>
         <div>
@@ -87,7 +47,6 @@
           <select name="typeAnimal" id="type-animal">
             <option value="cachorro">Cachorro</option>
             <option value="gato">Gato</option>
-            <!-- Adicione outros tipos de animais aqui -->
           </select>
         </div>
         <div class="description">
@@ -95,17 +54,17 @@
           <textarea name="description" id="description"></textarea>
         </div>
         <div>
-          <input type="submit" value="Enviar" />
+          <input type="submit" value="Postar" />
         </div>
       </form>
-
-      
+    
     </dialog>
 
     <script
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+    <script src="show-post-modal.js"></script>
     <script src="logout.js"></script>
     <script src="auto-logout.js"></script>
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>

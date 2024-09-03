@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "email": "julio@gmail.com",
+    "password": "123123",
+    "name": "Júlio",
+    "hash": "e4b46a27c7f09ebd12a7f5f063d2f2da02e7b24b606dd26a08f9a3db121d7d93"
+  },
+  {
+    "id": 2,
+    "name": "Dudu",
+    "email": "dudu@gmail.com",
+    "password": "123123",
+    "hash": "519d63c1e373f99f62d3803698a57094a4ef14a05a2a6d21b5df4b35d5bde25f"
+  },
+  {
+    "id": 3,
+    "name": "Natalhia",
+    "email": "nat@gmail.com",
+    "password": "123123",
+    "hash": "7eae6d731688e8e2d3dd64f6e004eb906b8dd4c9981b0b02da8b232f49c04e91"
+  }
+]

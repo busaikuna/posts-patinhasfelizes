@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="login.css">
+    <link rel="shortcut icon" href="logo.jpeg" type="image/x-icon">
+  </head>
+  <body>
+    <header>
+      <img src="logo.jpeg" alt="" />
+    </header>
+    <main>
+        <form id="signup-form">
+            <h1>Cadastro</h1>
+            <input id="name" type="text" placeholder="Nome" required />
+            <input id="email" type="email" placeholder="Email" required />
+            <input id="password" type="password" placeholder="Senha" required />
+            <p id="alert-error-in" class="alert-error none"></p>
+            <button>Cadastrar</button>
+        </form>
+      <div>
+      <div>
+        <p>Já tem uma conta? <a href="index.html">Faça login</a></p>
+      </div>
+    </main>
+    <script src="signup.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>nemroa@pet.com</title>
+    <link rel="shortcut icon" href="logo.jpeg" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="feed.css" />
+    <link rel="stylesheet" href="footer.css" />
+    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="profile.css" />
+  </head>
+  <body>
+    <header>
+      <div class="info">
+        <img src="logo.jpeg" alt="" />
+        <a href="">nemora@pet.com</a>
+      </div>
+      <img
+        onclick="logout()"
+        class="icon"
+        src="https://icons.iconarchive.com/icons/pictogrammers/material-light/256/logout-icon.png"
+        alt=""
+      />
+    </header>
+
+    <div class="header">
+      <div class="container-erik">
+        <img src="logo.jpeg" alt="" />
+        <div class="item">
+          <div>
+            <p>Publicações</p>
+            <p>2</p>
+          </div>
+          <div>
+            <p>Curtidas</p>
+            <p>10</p>
+          </div>
+          <div>
+            <p>Interações</p>
+            <p>8</p>
+          </div>
+        </div>
+      </div>
+      <h4>Nêmora</h4>
+    </div>
+
+    <main class="posts-profile"></main>
+
+    <footer>
+      <a href="feed.html"><img src="feed-icon.jpeg" alt="Home" /></a>
+      <a href="search-profile.html"
+        ><img src="search-icon.jpeg" alt="Search"
+      /></a>
+      <img src="new-post-icon.jpeg" alt="add" />
+      <a href="profile.html"><img src="profile-icon.jpeg" alt="Profile" /></a>
+    </footer>
+
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script src="logout.js"></script>
+    <script src="auto-logout.js"></script>
+    <script src="my-profile-api-request.js"></script>
+  </body>
+</html>

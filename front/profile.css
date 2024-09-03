@@ -1,0 +1,62 @@
+.header {
+    width: 100%;
+}
+
+.header h4 {
+    color: #1070ca;
+    margin-top: 0;
+}
+
+.header img {
+    width: 80px;
+    
+}
+
+.container-erik {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+}
+
+.container-erik .item {
+    width: calc(100% - 80px);
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.container-erik .item div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.container-erik .item div p {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+}
+
+.header a {
+    font-size: 0.7rem !important;
+}
+
+.post-profile {
+    width: 100px;
+    height: 100px;
+}
+
+.post-profile img {
+    height: 100px;
+}
+
+.posts-profile {
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+}

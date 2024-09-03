@@ -1,1 +1,0 @@
-# Patinhas Felizes

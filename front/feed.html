@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patinhas Felizes</title>
+    <link rel="shortcut icon" href="logo.jpeg" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="feed.css" />
+    <link rel="stylesheet" href="footer.css" />
+    <link rel="stylesheet" href="header.css" />
+  </head>
+  <body>
+    <div class="modal-newPost">
+      <span>X</span>
+      <h1>Adicionar POST</h1>
+      <form action="http://localhost:8000/newPost" method="POST" enctype="multipart/form-data">
+        <div class="image-upload">
+            <label for="image"></label>
+            <input hidden type="file" name="image" id="image">
+        </div>
+        <div>
+          <select name="typeAnimal" id="type-animal">
+            <option value="cachorro">Cachorro</option>
+            <option value="gato">Gato</option>
+            <option value="papagaio">Papagaio</option>
+            <option value="coelho">Coelho</option>
+            <option value="hamster">Hamster</option>
+            <option value="peixe">Peixe</option>
+            <option value="cavalo">Cavalo</option>
+            <option value="iguana">Iguana</option>
+            <option value="tartaruga">Tartaruga</option>
+            <option value="rato">Rato</option>
+            <option value="pato">Pato</option>
+            <option value="porquinho-da-índia">Porquinho-da-índia</option>
+            <option value="furão">Furão</option>
+            <option value="pássaro">Pássaro</option>
+            <option value="tartaruga-de-terra">Tartaruga de terra</option>
+            <option value="peixe-beta">Peixe beta</option>
+            <option value="chinchila">Chinchila</option>
+          </select>
+          
+        </div>
+        <div class="description">
+          <label for="description">Adicione uma descrição:</label>
+          <textarea name="description" id="description"></textarea>
+        </div>
+        <div>
+          <input type="submit" value="Enviar">
+        </div>
+      </form>
+    </div>
+    <header>
+      <div class="info">
+        <img src="logo.jpeg" alt="" />
+        <a href="">nemora@pet.com</a>
+      </div>
+      <img
+        onclick="logout()"
+        class="icon"
+        src="https://icons.iconarchive.com/icons/pictogrammers/material-light/256/logout-icon.png"
+        alt=""
+      />
+    </header>
+
+    <main>
+    </main>
+
+    <footer>
+      <a href="feed.html"><img src="feed-icon.jpeg" alt="Home" /></a>
+      <a href="search-profile.html"
+        ><img src="search-icon.jpeg" alt="Search"
+      /></a>
+      <img id="add" src="new-post-icon.jpeg" alt="add" />
+      <a href="profile.html"><img src="profile-icon.jpeg" alt="Profile" /></a>
+    </footer>
+
+    <dialog close>
+      <p>Greetings, one and all!</p>
+      <form id="myForm" enctype="multipart/form-data">
+        <div class="image-upload">
+          <label for="image">Escolha uma imagem:</label>
+          <input type="file" name="image" id="image" />
+        </div>
+        <div>
+          <label for="type-animal">Escolha o tipo de animal:</label>
+          <select name="typeAnimal" id="type-animal">
+            <option value="cachorro">Cachorro</option>
+            <option value="gato">Gato</option>
+            <!-- Adicione outros tipos de animais aqui -->
+          </select>
+        </div>
+        <div class="description">
+          <label for="description">Adicione uma descrição:</label>
+          <textarea name="description" id="description"></textarea>
+        </div>
+        <div>
+          <input type="submit" value="Enviar" />
+        </div>
+      </form>
+
+      
+    </dialog>
+
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="logout.js"></script>
+    <script src="auto-logout.js"></script>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script src="feed-api-request.js"></script>
+    <script src="new-post-script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+  </body>
+</html>

@@ -1,9 +1,9 @@
 const main = document.querySelector("main")
+const contPub = document.querySelector("#cont-pub")
+const email = document.querySelector(".info a")
+const nickname = document.querySelector("#name")
 
-if(!localStorage.getItem("HASH")){
-    localStorage.setItem("HASH", "secret")
-}
-const HASH = localStorage.getItem("HASH")
+const HASH = localStorage.getItem("hashptfl")
 fetch(`http://localhost:8008/posts/${HASH}`, {
     method: "GET"
 })
@@ -22,6 +22,9 @@ fetch(`http://localhost:8008/posts/${HASH}`, {
     }).join("")
 
     main.innerHTML = myPosts
+    contPub.innerHTML = data.length
+    email.innerHTML = data[0].email
+    nickname.innerHTML = data[0].name
 })
 .catch(error => {
     console.error('Fetch error:', error);

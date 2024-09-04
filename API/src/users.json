@@ -19,5 +19,19 @@
     "email": "nat@gmail.com",
     "password": "123123",
     "hash": "7eae6d731688e8e2d3dd64f6e004eb906b8dd4c9981b0b02da8b232f49c04e91"
+  },
+  {
+    "id": 4,
+    "name": "Samuel",
+    "email": "kunaabus@gmail.com",
+    "password": "sadasa2007",
+    "hash": "bad54c0c2502449d53b0ae8b2b33e8d7"
+  },
+  {
+    "id": 5,
+    "name": "Samuel",
+    "email": "samuel@gmail.com",
+    "password": "sadasa2007",
+    "hash": "7b3eede0a099771a61a428a4478c0ae2"
   }
 ]

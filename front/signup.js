@@ -27,6 +27,7 @@ document
             localStorage.setItem("name", user.name);
             localStorage.setItem("email", user.email);
             localStorage.setItem("avatar", user.avatar);
+            localStorage.setItem("hashptfl", user.hash)
 
             window.location.href = "feed.html";
           });

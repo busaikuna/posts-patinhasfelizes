@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>nemroa@pet.com</title>
+    <title>Sua conta - Patinhas Felizes</title>
     <link rel="shortcut icon" href="logo.jpeg" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="feed.css" />
@@ -12,52 +12,6 @@
     <link rel="stylesheet" href="profile.css" />
   </head>
   <body>
-    <header>
-      <div class="info">
-        <img src="logo.jpeg" alt="" />
-        <a href="">nemora@pet.com</a>
-      </div>
-      <img
-        onclick="logout()"
-        class="icon"
-        src="https://icons.iconarchive.com/icons/pictogrammers/material-light/256/logout-icon.png"
-        alt=""
-      />
-    </header>
-
-    <div class="header">
-      <div class="container-erik">
-        <img src="logo.jpeg" alt="" />
-        <div class="item">
-          <div>
-            <p>Publicações</p>
-            <p>2</p>
-          </div>
-          <div>
-            <p>Curtidas</p>
-            <p>10</p>
-          </div>
-          <div>
-            <p>Interações</p>
-            <p>8</p>
-          </div>
-        </div>
-      </div>
-      <h4>Nêmora</h4>
-    </div>
-
-    <main class="posts-profile"></main>
-
-    <footer>
-      <a href="feed.html"><img src="feed-icon.jpeg" alt="Home" /></a>
-      <a href="search-profile.html"
-        ><img src="search-icon.jpeg" alt="Search"
-      /></a>
-      <img id="add" src="new-post-icon.jpeg" alt="add" />
-      <a href="profile.html"><img src="profile-icon.jpeg" alt="Profile" /></a>
-    </footer>
-
-
     <dialog>
       <span class="close">X</span>
       <form id="myForm" enctype="multipart/form-data">
@@ -81,11 +35,71 @@
       </form>
     
     </dialog>
+
+    <dialog id="change-pic">
+      <span class="close-pic">X</span>
+      <h1>Deseja mudar sua foto de perfil?</h1>
+      <div>
+        <button>Cancelar</button>
+        <button>Mudar</button>
+      </div>
+      </form>
+    </dialog>
+    <header>
+      <div class="info">
+        <img src="logo.jpeg" alt="" />
+        <a href=""></a>
+      </div>
+      <img
+        onclick="logout()"
+        class="icon"
+        src="https://icons.iconarchive.com/icons/pictogrammers/material-light/256/logout-icon.png"
+        alt=""
+      />
+    </header>
+
+    <div class="header">
+      <div class="container-erik">
+        <label for="account-image">
+          <img src="logo.jpeg" alt="" />
+          <input style="display: none;" id="account-image" name="account-image" type="file">
+        </label>
+        <div class="item">
+          <div>
+            <p>Publicações</p>
+            <p id="cont-pub">2</p>
+          </div>
+          <div>
+            <p>Curtidas</p>
+            <p>10</p>
+          </div>
+          <div>
+            <p>Interações</p>
+            <p>8</p>
+          </div>
+        </div>
+      </div>
+      <h4 id="name">Nêmora</h4>
+    </div>
+
+    <main class="posts-profile"></main>
+
+    <footer>
+      <a href="feed.html"><img src="feed-icon.jpeg" alt="Home" /></a>
+      <a href="search-profile.html"
+        ><img src="search-icon.jpeg" alt="Search"
+      /></a>
+      <img id="add" src="new-post-icon.jpeg" alt="add" />
+      <a href="profile.html"><img src="profile-icon.jpeg" alt="Profile" /></a>
+    </footer>
+
     <script src="show-post-modal.js"></script>
+    <script src="new-post-script.js"></script>
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     <script src="logout.js"></script>
     <script src="auto-logout.js"></script>
     <script src="my-profile-api-request.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
     
   </body>
 </html>

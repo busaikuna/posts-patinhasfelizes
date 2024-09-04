@@ -2,7 +2,7 @@ import express, { json } from "express";
 import cors from "cors";
 import fs from "fs";
 import multer from "multer";
-import crypto from "crypto";
+import crypto, { hash } from "crypto";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 import { v4 as uuidv4 } from "uuid";
@@ -49,6 +49,8 @@ app.post("/signin", async (req, res) => {
 
 app.post("/signup", async (req, res) => {
   const payload = req.body;
+  const hashptfl = generateHash()
+  payload.hash = hashptfl
 
   try {
     const data = await getFile("./src/users.json", "utf8");
@@ -80,10 +82,8 @@ app.post("/posts", upload.single("image"), (req, res) => {
 
     const hashPub = req.body.hash;
     const user = jsonUsersData.find(user => user.hash === hashPub);
-    console.log(user)
 
-    const HASH = generateHash();
-    const link = `${req.protocol}://${req.get("host")}/publications/${HASH}`;
+    const link = `${req.protocol}://${req.get("host")}/image/${hashPub}`;
     const id = uuidv4();
 
     const dados = {
@@ -94,7 +94,7 @@ app.post("/posts", upload.single("image"), (req, res) => {
       picture: req.file.filename,
       description: req.body.description,
       link,
-      HASH,
+      hash: hashPub,
     };
 
     jsonData.push(dados);
@@ -119,7 +119,7 @@ app.get("/posts/:hash", (req, res) => {
   const hash = req.params.hash;
   const data = fs.readFileSync("src/posts.json", "utf-8");
   const jsonData = JSON.parse(data);
-  const posts = jsonData.filter((post) => post.accountID == hash);
+  const posts = jsonData.filter((post) => post.hash == hash);
   res.send(posts);
 });
 
@@ -131,15 +131,6 @@ app.get("/image/:filename", (req, res) => {
 function generateHash() {
   return crypto.randomBytes(16).toString("hex");
 }
-
-app.get("/publications/:hash", (req, res) => {
-  const { hash } = req.params;
-  const data = fs.readFileSync("src/posts.json", "utf-8");
-  const jsonData = JSON.parse(data);
-  let publication = jsonData.find((posts) => posts.hash == hash);
-  console.log(publication);
-  res.status(201).send(publication);
-});
 
 app.listen(PORT, () => {
   console.log(`Server rodando em http://localhost:${PORT}`);

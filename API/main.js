@@ -77,6 +77,9 @@ app.post("/posts", upload.single("image"), (req, res) => {
     const data = fs.readFileSync("src/posts.json", "utf-8");
     const jsonData = JSON.parse(data);
 
+    const likesData = fs.readFileSync("src/likes.json", "utf-8");
+    const jsonLikesData = JSON.parse(likesData);
+
     const dataUsers = fs.readFileSync("src/users.json", "utf-8");
     const jsonUsersData = JSON.parse(dataUsers);
 
@@ -85,6 +88,13 @@ app.post("/posts", upload.single("image"), (req, res) => {
 
     const link = `${req.protocol}://${req.get("host")}/image/${hashPub}`;
     const id = uuidv4();
+
+    const like = {
+      hash_post: hashPub,
+      liked: []
+    }
+
+    jsonLikesData.push(like)
 
     const dados = {
       name: user.name,
@@ -99,6 +109,7 @@ app.post("/posts", upload.single("image"), (req, res) => {
 
     jsonData.push(dados);
     fs.writeFileSync("src/posts.json", JSON.stringify(jsonData, null, 2));
+    fs.writeFileSync("src/likes.json", JSON.stringify(jsonLikesData, null, 2));
 
     res.status(201).json({ message: "Post criado com sucesso!", post: dados });
   } catch (error) {
@@ -107,12 +118,43 @@ app.post("/posts", upload.single("image"), (req, res) => {
   }
 });
 
+app.post("/likes/:hash/:user", (req, res) => {
+  const hash = req.params.hash;
+  const user = req.params.user;
+
+  try {
+    const data = fs.readFileSync("src/likes.json", "utf-8");
+    const likeData = JSON.parse(data);
+
+    const post = likeData.find((post) => post.hash_post === hash);
+
+    if (post) {
+      if (!post.liked.includes(user)) {
+        post.liked.push(user);
+        fs.writeFileSync("src/likes.json", JSON.stringify(likeData, null, 2), "utf-8");
+        res.status(200).send("Like registrado com sucesso");
+      } else {
+        res.status(200).send("Usuário já curtiu este post");
+      }
+    } else {
+      res.status(404).send("Post não encontrado");
+    }
+
+  } catch (error) {
+    console.error("Erro ao processar a solicitação:", error);
+    res.status(500).send("Erro interno do servidor");
+  }
+});
+
 
 app.get("/posts", (req, res) => {
   const data = fs.readFileSync("src/posts.json", "utf-8");
   const jsonData = JSON.parse(data);
+
+  const dataLike = fs.readFileSync("src/likes.json", "utf-8")
+  const jsonDataLikes = JSON.parse(dataLike)
   jsonData.reverse();
-  res.send(jsonData);
+  res.json({ posts: jsonData, likes: jsonDataLikes });
 });
 
 app.get("/posts/:hash", (req, res) => {

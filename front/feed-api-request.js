@@ -8,7 +8,8 @@ fetch("http://localhost:8008/posts", {
     .then(response => response.json())
     .then(data => {
         console.log(data)
-        const post = data.map(post => {
+        console.log(data.likes)
+        const post = data.posts.map(post => {
 
             let postDescription = ""
             if (post.description.length <= 60) {
@@ -20,6 +21,8 @@ fetch("http://localhost:8008/posts", {
             <p class="readMore-description">${post.description}</p>
             </span></p>`
             }
+            const likes = data.likes.filter((like) => like === localStorage.getItem("hashptfl"))
+            alert(data.likes)
 
             return `
       <div class="post">
@@ -32,9 +35,10 @@ fetch("http://localhost:8008/posts", {
             ${postDescription}
             <div class="likes-container">
                 <p>Descrição:</p>
-                <div>
-                    <span class="likes">5 Curtidas</span>
-                    <ion-icon name="heart-empty"></ion-icon>
+                <div class="like">
+                    <span class="likes">${likes.liked.length}</span>
+                    <img src="like.png" alt="Like" />
+                    <input id="hash" type="hidden" value="${post.hash}">
                 </div>
             </div>
         </div>
@@ -43,6 +47,38 @@ fetch("http://localhost:8008/posts", {
         }).join("")
 
         main.innerHTML = post
+
+        const likes = document.querySelectorAll(".like");
+
+        likes.forEach(like => {
+            const button = like.querySelector("img");
+            button.addEventListener("click", async () => {
+                console.log(button.src)
+                if(button.src == "like.png"){
+                    button.src == "liked.png"
+                }
+                const user = localStorage.getItem("hashptfl");
+                const hash = document.querySelector("#hash").value;
+        
+                try {
+                    const response = await fetch(`http://localhost:8008/likes/${hash}/${user}`, {
+                        method: "POST",
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    });
+        
+                    if (response.ok) {
+                        console.log("Like registered successfully");
+                    } else {
+                        console.error("Failed to register like");
+                    }
+                } catch (error) {
+                    console.error("Error:", error);
+                }
+            });
+        });
+        
 
         const readMoreButtons = document.querySelectorAll(".post-description span")
         const normalText = document.querySelector(".post-description")

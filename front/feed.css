@@ -235,6 +235,11 @@ dialog{
     font-size: 14px;
     color: #666;
 }
+.likes-container div{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
 .post-description, .readMore-description{
     width: 90%;
 }
@@ -250,4 +255,7 @@ dialog{
 .close{
    margin-left: 240px;
    font-weight: bold;
+}
+.like img{
+    width: 32px;
 }
